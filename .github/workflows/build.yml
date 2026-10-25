@@ -1,41 +1,32 @@
-name: Build Grand Strategy Forge 1.16.5
+name: Build Grand Strategy Mod
 
 on:
-  workflow_dispatch:
   push:
-    branches: [main, master]
-
-permissions:
-  contents: read
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Java 8
+      - name: Set up JDK 8
         uses: actions/setup-java@v4
         with:
-          distribution: temurin
+          distribution: 'zulu'
           java-version: '8'
 
-      - name: Set up Gradle 6.8.3
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '6.8.3'
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
 
-      - name: Extract source archive
-        run: unzip -q grandstrategy-step1.zip -d _source
+      - name: Build with Gradle
+        run: gradle build --no-daemon
 
-      - name: Build mod JAR
-        run: gradle --no-daemon -p _source/grandstrategy-step1 clean build
-
-      - name: Upload compiled JAR
+      - name: Upload Mod Jar
         uses: actions/upload-artifact@v4
         with:
           name: grandstrategy-forge-1.16.5
-          path: _source/grandstrategy-step1/build/libs/*.jar
-          if-no-files-found: error
-          retention-days: 14
+          path: build/libs/*.jar
