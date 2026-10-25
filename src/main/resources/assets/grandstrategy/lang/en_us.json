@@ -1,0 +1,12 @@
+{
+  "key.grandstrategy.open_realm_overview": "Open Realm Overview",
+  "key.categories.grandstrategy": "Grand Strategy",
+  "screen.grandstrategy.realm_overview.title": "Realm Overview",
+  "gui.grandstrategy.realm_overview.welcome": "Your realm at a glance",
+  "gui.grandstrategy.realm_overview.hint": "The management interface is under construction.",
+  "gui.grandstrategy.realm_overview.placeholder": "Realm data will appear here.",
+  "gui.grandstrategy.realm_overview.tab.overview": "Overview",
+  "gui.grandstrategy.realm_overview.tab.economy": "Economy",
+  "gui.grandstrategy.realm_overview.tab.diplomacy": "Diplomacy",
+  "gui.grandstrategy.realm_overview.tab.military": "Military"
+}

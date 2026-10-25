@@ -1,0 +1,12 @@
+{
+  "key.grandstrategy.open_realm_overview": "Открыть обзор державы",
+  "key.categories.grandstrategy": "Большая стратегия",
+  "screen.grandstrategy.realm_overview.title": "Обзор державы",
+  "gui.grandstrategy.realm_overview.welcome": "Ваша держава одним взглядом",
+  "gui.grandstrategy.realm_overview.hint": "Интерфейс управления находится в разработке.",
+  "gui.grandstrategy.realm_overview.placeholder": "Здесь будут отображаться данные державы.",
+  "gui.grandstrategy.realm_overview.tab.overview": "Обзор",
+  "gui.grandstrategy.realm_overview.tab.economy": "Экономика",
+  "gui.grandstrategy.realm_overview.tab.diplomacy": "Дипломатия",
+  "gui.grandstrategy.realm_overview.tab.military": "Армия"
+}
