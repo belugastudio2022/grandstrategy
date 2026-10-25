@@ -1,10 +1,10 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.minecraftforge.net/' }
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1+', changing: true
     }
 }
 
@@ -31,6 +31,7 @@ minecraft {
                 }
             }
         }
+
         server {
             workingDirectory project.file('run')
             property 'forge.logging.console.level', 'debug'
@@ -45,6 +46,7 @@ minecraft {
 }
 
 repositories {
+    maven { url = 'https://maven.minecraftforge.net/' }
     mavenCentral()
 }
 
@@ -55,17 +57,16 @@ dependencies {
 jar {
     manifest {
         attributes([
-                'Specification-Title'     : 'grandstrategy',
-                'Specification-Vendor'    : 'example',
-                'Specification-Version'   : '1',
-                'Implementation-Title'    : project.name,
-                'Implementation-Version'  : project.version,
-                'Implementation-Vendor'   : 'example'
+            'Specification-Title'     : 'grandstrategy',
+            'Specification-Vendor'    : 'example',
+            'Specification-Version'   : '1',
+            'Implementation-Title'    : project.name,
+            'Implementation-Version'  : project.version,
+            'Implementation-Vendor'   : 'example'
         ])
     }
+    jar.finalizedBy('reobfJar')
 }
-
-jar.finalizedBy('reobfJar')
 
 processResources {
     inputs.property 'version', project.version
